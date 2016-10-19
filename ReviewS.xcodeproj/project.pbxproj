@@ -13,6 +13,7 @@
 		D73ED6B71DB7BD640057099D /* ReviewS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D73ED6B51DB7BD640057099D /* ReviewS.xcdatamodeld */; };
 		D73ED6B91DB7BD640057099D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D73ED6B81DB7BD640057099D /* Assets.xcassets */; };
 		D73ED6BC1DB7BD640057099D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73ED6BA1DB7BD640057099D /* LaunchScreen.storyboard */; };
+		D73ED6C61DB7C0510057099D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73ED6C51DB7C0510057099D /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		D73ED6B81DB7BD640057099D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D73ED6BB1DB7BD640057099D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D73ED6BD1DB7BD640057099D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D73ED6C31DB7C04B0057099D /* ReviewS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReviewS.entitlements; sourceTree = "<group>"; };
+		D73ED6C51DB7C0510057099D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D73ED6C61DB7C0510057099D /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +46,7 @@
 			children = (
 				D73ED6AD1DB7BD640057099D /* ReviewS */,
 				D73ED6AC1DB7BD640057099D /* Products */,
+				D73ED6C41DB7C0510057099D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +61,7 @@
 		D73ED6AD1DB7BD640057099D /* ReviewS */ = {
 			isa = PBXGroup;
 			children = (
+				D73ED6C31DB7C04B0057099D /* ReviewS.entitlements */,
 				D73ED6AE1DB7BD640057099D /* AppDelegate.swift */,
 				D73ED6B01DB7BD640057099D /* ViewController.swift */,
 				D73ED6B21DB7BD640057099D /* Main.storyboard */,
@@ -65,6 +71,14 @@
 				D73ED6B51DB7BD640057099D /* ReviewS.xcdatamodeld */,
 			);
 			path = ReviewS;
+			sourceTree = "<group>";
+		};
+		D73ED6C41DB7C0510057099D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D73ED6C51DB7C0510057099D /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,8 +113,16 @@
 				TargetAttributes = {
 					D73ED6AA1DB7BD640057099D = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = N4B9PPLY6B;
+						DevelopmentTeam = BWYT76Q3DS;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -265,10 +287,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N4B9PPLY6B;
+				CODE_SIGN_ENTITLEMENTS = ReviewS/ReviewS.entitlements;
+				DEVELOPMENT_TEAM = BWYT76Q3DS;
 				INFOPLIST_FILE = ReviewS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.jhhs.ReviewS;
+				PRODUCT_BUNDLE_IDENTIFIER = org.jhhs.JBMx.ReviewS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -278,10 +302,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N4B9PPLY6B;
+				CODE_SIGN_ENTITLEMENTS = ReviewS/ReviewS.entitlements;
+				DEVELOPMENT_TEAM = BWYT76Q3DS;
 				INFOPLIST_FILE = ReviewS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.jhhs.ReviewS;
+				PRODUCT_BUNDLE_IDENTIFIER = org.jhhs.JBMx.ReviewS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
