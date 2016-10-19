@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D73ED6AF1DB7BD640057099D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73ED6AE1DB7BD640057099D /* AppDelegate.swift */; };
-		D73ED6B11DB7BD640057099D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73ED6B01DB7BD640057099D /* ViewController.swift */; };
+		D73ED6B11DB7BD640057099D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73ED6B01DB7BD640057099D /* MainViewController.swift */; };
 		D73ED6B41DB7BD640057099D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73ED6B21DB7BD640057099D /* Main.storyboard */; };
 		D73ED6B71DB7BD640057099D /* ReviewS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D73ED6B51DB7BD640057099D /* ReviewS.xcdatamodeld */; };
 		D73ED6B91DB7BD640057099D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D73ED6B81DB7BD640057099D /* Assets.xcassets */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		D73ED6AB1DB7BD640057099D /* ReviewS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReviewS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73ED6AE1DB7BD640057099D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D73ED6B01DB7BD640057099D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D73ED6B01DB7BD640057099D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D73ED6B31DB7BD640057099D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D73ED6B61DB7BD640057099D /* ReviewS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReviewS.xcdatamodel; sourceTree = "<group>"; };
 		D73ED6B81DB7BD640057099D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 			children = (
 				D73ED6C31DB7C04B0057099D /* ReviewS.entitlements */,
 				D73ED6AE1DB7BD640057099D /* AppDelegate.swift */,
-				D73ED6B01DB7BD640057099D /* ViewController.swift */,
+				D73ED6B01DB7BD640057099D /* MainViewController.swift */,
 				D73ED6B21DB7BD640057099D /* Main.storyboard */,
 				D73ED6B81DB7BD640057099D /* Assets.xcassets */,
 				D73ED6BA1DB7BD640057099D /* LaunchScreen.storyboard */,
@@ -117,7 +117,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.iCloud = {
 								enabled = 1;
@@ -162,7 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D73ED6B11DB7BD640057099D /* ViewController.swift in Sources */,
+				D73ED6B11DB7BD640057099D /* MainViewController.swift in Sources */,
 				D73ED6B71DB7BD640057099D /* ReviewS.xcdatamodeld in Sources */,
 				D73ED6AF1DB7BD640057099D /* AppDelegate.swift in Sources */,
 			);
