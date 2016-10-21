@@ -16,6 +16,7 @@
 		D73ED6C61DB7C0510057099D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73ED6C51DB7C0510057099D /* CloudKit.framework */; };
 		D74C020F1DB917E200E36297 /* UploadQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C020E1DB917E200E36297 /* UploadQViewController.swift */; };
 		D74C02111DB9181C00E36297 /* FlashCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C02101DB9181C00E36297 /* FlashCardsViewController.swift */; };
+		D772CF251DBA5FB000F39195 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D772CF241DBA5FB000F39195 /* ViewController1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		D73ED6C51DB7C0510057099D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		D74C020E1DB917E200E36297 /* UploadQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadQViewController.swift; sourceTree = "<group>"; };
 		D74C02101DB9181C00E36297 /* FlashCardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardsViewController.swift; sourceTree = "<group>"; };
+		D772CF241DBA5FB000F39195 /* ViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			children = (
 				D73ED6B21DB7BD640057099D /* Main.storyboard */,
 				D73ED6B01DB7BD640057099D /* MainViewController.swift */,
+				D772CF241DBA5FB000F39195 /* ViewController1.swift */,
 				D74C020E1DB917E200E36297 /* UploadQViewController.swift */,
 				D74C02101DB9181C00E36297 /* FlashCardsViewController.swift */,
 				D73ED6B81DB7BD640057099D /* Assets.xcassets */,
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D772CF251DBA5FB000F39195 /* ViewController1.swift in Sources */,
 				D73ED6B11DB7BD640057099D /* MainViewController.swift in Sources */,
 				D73ED6B71DB7BD640057099D /* ReviewS.xcdatamodeld in Sources */,
 				D74C02111DB9181C00E36297 /* FlashCardsViewController.swift in Sources */,
