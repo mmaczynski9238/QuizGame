@@ -9,49 +9,80 @@
 import UIKit
 
 class UploadQViewController: UIViewController {
-
     
-    let length:Int = 55
     
-    let hieght:Int = 15
+    let length:Int = 255
+    
+    let hieght:Int = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-       createBlocks()
+        createBlocks1()
+        createBlocks2()
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func createBlocks()
+    func createBlocks1()
     {
         
         var x:Int = 20
         var y:Int = 179
-        var textField = UIView()
+        var textField = UITextField()
         
-        
-        for _ in 1...5
+        for _ in 1...10
         {
-            for _ in 1...12
+            for _ in 1...2
             {
-                //it has a vowel
-                //its a word
+                
                 textField = UITextField(frame:CGRect (x: x, y: y, width: length, height: hieght))
                 view.addSubview(textField)
-                print ("textField")
                 
                 
                 x += 90
             }
+            textField.placeholder = "ENTER TERM"
+            
             x = 20
             y += 70
         }
         
     }
-
+    func createBlocks2()
+    {
+        
+        var x1:Int = 410
+        var y1:Int = 179
+        var textField = UITextField()
+        
+        
+        for _ in 1...10
+        {
+            for _ in 1...2
+            {
+                
+                textField = UITextField(frame:CGRect (x: x1, y: y1, width: length, height: hieght))
+                view.addSubview(textField)
+                
+                x1 += 90
+            }
+            textField.placeholder = "ENTER ANSWER"
+            
+            x1 = 410
+            y1 += 70
+        }
+        
+    }
+    
+    //326
+    //914
+    
+    
 }
