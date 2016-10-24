@@ -9,27 +9,61 @@
 import UIKit
 
 class FlashCardsViewController: UIViewController {
-
+    
+    @IBOutlet var cardLabel: UILabel!
+    
+    let cards: Array<Card> = [
+        Card(front: "front1", back: "back1"),
+        Card(front: "front2", back: "back2"),
+        Card(front: "front3", back: "back3")
+    ]
+    
+    var currentCard = 0
+    var showFront = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        showCard()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func nextTapped(sender: AnyObject) {
+        self.currentCard += 1
+        self.showFront = true
+        
+        if (self.currentCard >= self.cards.count) {
+            self.currentCard = self.cards.count - 1
+        }
+        
+        showCard()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func backTapped(sender: AnyObject) {
+        self.currentCard -= 1
+        self.showFront = true
+        
+        if (self.currentCard < 0) {
+            self.currentCard = 0
+        }
+        
+        showCard()
     }
-    */
-
+    
+    @IBAction func flipCardTapped(sender: AnyObject) {
+        if (self.showFront) {
+            self.showFront = false
+        }
+        else {
+            self.showFront = true
+        }
+        showCard()
+    }
+    
+    func showCard() {
+        if (self.showFront) {
+            self.cardLabel.text = self.cards[self.currentCard].front
+        }
+        else {
+            self.cardLabel.text = self.cards[self.currentCard].back
+        }
+    }
 }

@@ -41,7 +41,7 @@ class RegisterViewController: UIViewController {
     
     
     func displayAlertMessage(_ userMessage: String){
-        let alert = UIAlertController(title: "Alert", message: "You have registered", preferredStyle: <#T##UIAlertControllerStyle#>)
+        let alert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
     }
     
 
