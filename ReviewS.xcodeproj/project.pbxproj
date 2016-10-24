@@ -17,6 +17,7 @@
 		D74C020F1DB917E200E36297 /* UploadQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C020E1DB917E200E36297 /* UploadQViewController.swift */; };
 		D74C02111DB9181C00E36297 /* FlashCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C02101DB9181C00E36297 /* FlashCardsViewController.swift */; };
 		D772CF251DBA5FB000F39195 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D772CF241DBA5FB000F39195 /* ViewController1.swift */; };
+		D7CD23C11DBE52FC003449FA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD23C01DBE52FC003449FA /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D74C020E1DB917E200E36297 /* UploadQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadQViewController.swift; sourceTree = "<group>"; };
 		D74C02101DB9181C00E36297 /* FlashCardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardsViewController.swift; sourceTree = "<group>"; };
 		D772CF241DBA5FB000F39195 /* ViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
+		D7CD23C01DBE52FC003449FA /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				D73ED6B21DB7BD640057099D /* Main.storyboard */,
+				D7CD23C01DBE52FC003449FA /* RegisterViewController.swift */,
 				D73ED6B01DB7BD640057099D /* MainViewController.swift */,
 				D772CF241DBA5FB000F39195 /* ViewController1.swift */,
 				D74C020E1DB917E200E36297 /* UploadQViewController.swift */,
@@ -181,6 +184,7 @@
 			files = (
 				D772CF251DBA5FB000F39195 /* ViewController1.swift in Sources */,
 				D73ED6B11DB7BD640057099D /* MainViewController.swift in Sources */,
+				D7CD23C11DBE52FC003449FA /* RegisterViewController.swift in Sources */,
 				D73ED6B71DB7BD640057099D /* ReviewS.xcdatamodeld in Sources */,
 				D74C02111DB9181C00E36297 /* FlashCardsViewController.swift in Sources */,
 				D73ED6AF1DB7BD640057099D /* AppDelegate.swift in Sources */,
