@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Trivia-->
         <scene sceneID="bAw-KB-9q1">
             <objects>
                 <viewController id="5o3-Pt-LqA" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="oT0-Gl-BZX"/>
+                    <tabBarItem key="tabBarItem" title="Trivia" id="oT0-Gl-BZX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRX-mR-x2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="1156" y="-93"/>
         </scene>
-        <!--Main Screen-->
+        <!--Home-->
         <scene sceneID="8z8-or-nJa">
             <objects>
                 <viewController id="vEY-qg-1Km" sceneMemberID="viewController">
@@ -64,7 +64,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Main Screen" id="myw-Cb-ap1"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="myw-Cb-ap1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUb-n8-TkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -74,7 +74,7 @@
         <!--Flashcard-->
         <scene sceneID="lOY-Zs-QAV">
             <objects>
-                <viewController id="FYc-mz-TkM" sceneMemberID="viewController">
+                <viewController id="FYc-mz-TkM" customClass="FlashCardsViewController" customModule="ReviewS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Sr-DL-fnI"/>
                         <viewControllerLayoutGuide type="bottom" id="5Qz-Aw-CRN"/>
@@ -88,18 +88,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backTappedWithSender:" destination="FYc-mz-TkM" eventType="touchUpInside" id="lRN-ym-qEe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezg-aM-RrN">
                                 <frame key="frameInset" minX="629" minY="898" width="98" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextTappedWithSender:" destination="FYc-mz-TkM" eventType="touchUpInside" id="7ZO-qi-qK6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68a-Xn-kOW">
                                 <frame key="frameInset" minX="339" minY="898" width="98" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <state key="normal" title="Flip"/>
+                                <connections>
+                                    <action selector="flipCardTappedWithSender:" destination="FYc-mz-TkM" eventType="touchUpInside" id="obR-Vx-lFJ"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hA-Ko-hjM">
                                 <frame key="frameInset" minX="54" minY="45" width="660" height="511"/>
@@ -116,6 +125,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Flashcard" id="oab-IM-ZhP"/>
+                    <connections>
+                        <outlet property="cardLabel" destination="43S-nS-gU2" id="yLf-tb-cIX"/>
+                        <outlet property="imageView" destination="0hA-Ko-hjM" id="OnS-e5-blc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZoC-us-Phq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -218,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wb4-NC-iz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1503.125" y="217.96875"/>
+            <point key="canvasLocation" x="-1998" y="218"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="J63-3w-GzL">
@@ -297,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4pK-Ba-Qkl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1316" y="-482"/>
+            <point key="canvasLocation" x="-1998" y="-455"/>
         </scene>
         <!--UploadQ View Controller-->
         <scene sceneID="eDa-dG-3ZT">
@@ -370,11 +383,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="FYc-mz-TkM" kind="relationship" relationship="viewControllers" id="64A-pd-u3r"/>
-                        <segue destination="5o3-Pt-LqA" kind="relationship" relationship="viewControllers" id="5vS-gZ-2LZ"/>
-                        <segue destination="atk-eZ-BlH" kind="relationship" relationship="viewControllers" id="bLU-ZY-A4l"/>
-                        <segue destination="bIE-gC-vhM" kind="relationship" relationship="viewControllers" id="GYh-J7-P6N"/>
                         <segue destination="vEY-qg-1Km" kind="relationship" relationship="viewControllers" id="SZj-pX-c15"/>
+                        <segue destination="5o3-Pt-LqA" kind="relationship" relationship="viewControllers" id="5vS-gZ-2LZ"/>
+                        <segue destination="FYc-mz-TkM" kind="relationship" relationship="viewControllers" id="64A-pd-u3r"/>
+                        <segue destination="bIE-gC-vhM" kind="relationship" relationship="viewControllers" id="GYh-J7-P6N"/>
+                        <segue destination="atk-eZ-BlH" kind="relationship" relationship="viewControllers" id="bLU-ZY-A4l"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3x8-KV-M2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
