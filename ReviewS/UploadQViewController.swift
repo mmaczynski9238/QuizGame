@@ -8,81 +8,35 @@
 
 import UIKit
 
+
+public extension UIView {
+    func fadeIn(duration: TimeInterval = 1.0) {
+        UIView.animate(withDuration: duration, animations: {
+            self.alpha = 1.0})}
+    func fadeOut(duration: TimeInterval = 1.0) {
+        UIView.animate(withDuration: duration, animations: {
+            self.alpha = 0.0})}}
+
+
+
+
 class UploadQViewController: UIViewController {
     
-    
-    let length:Int = 255
-    
-    let hieght:Int = 50
-    
+    @IBOutlet var savedLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        createBlocks1()
-        createBlocks2()
-        
-        
+
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func saveFlashcard(_ sender: UIButton) {
+        
+        
+        savedLabel.text = "Flashcard Saved"
+        savedLabel.textColor = UIColor.black
+        savedLabel.alpha = 0.0
+        savedLabel.fadeIn(duration: 0.1)
+        savedLabel.fadeOut(duration: 0.5)
+
     }
-    
-    func createBlocks1()
-    {
-        
-        var x:Int = 20
-        var y:Int = 179
-        var textField = UITextField()
-        
-        for _ in 1...10
-        {
-            for _ in 1...2
-            {
-                
-                textField = UITextField(frame:CGRect (x: x, y: y, width: length, height: hieght))
-                view.addSubview(textField)
-                
-                
-                x += 90
-            }
-            textField.placeholder = "ENTER TERM"
-            
-            x = 20
-            y += 70
-        }
-        
-    }
-    func createBlocks2()
-    {
-        
-        var x1:Int = 410
-        var y1:Int = 179
-        var textField = UITextField()
-        
-        
-        for _ in 1...10
-        {
-            for _ in 1...2
-            {
-                
-                textField = UITextField(frame:CGRect (x: x1, y: y1, width: length, height: hieght))
-                view.addSubview(textField)
-                
-                x1 += 90
-            }
-            textField.placeholder = "ENTER ANSWER"
-            
-            x1 = 410
-            y1 += 70
-        }
-        
-    }
-    
-    //326
-    //914
-    
-    
 }

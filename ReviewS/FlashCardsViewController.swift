@@ -8,9 +8,21 @@
 
 import UIKit
 
+
+//public extension UIView {
+//    func fadeIn(duration duration: NSTimeInterval = 1.0) {
+//        UIView.animateWithDuration(duration, animations: {
+//            self.alpha = 1.0})}
+//    func fadeOut(duration duration: NSTimeInterval = 1.0) {
+//        UIView.animateWithDuration(duration, animations: {
+//            self.alpha = 0.0})}}
+//
+
+
 class FlashCardsViewController: UIViewController {
     
     @IBOutlet var cardLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
     
     let cards: Array<Card> = [
         Card(front: "front1", back: "back1"),
@@ -26,6 +38,21 @@ class FlashCardsViewController: UIViewController {
         
         showCard()
     }
+    
+    func receiveQuestions()
+    {
+//        if error = nil
+//        {
+//            scorePlusLabel.text = "Flashcard Saved"
+//            scorePlusLabel.textColor = UIColor.blackColor()
+//            scorePlusLabel.alpha = 0.0
+//            scorePlusLabel.fadeIn(duration: 0.1)
+//            scorePlusLabel.fadeOut(duration: 0.3)
+//
+//        }
+    }
+    
+    
     @IBAction func nextTapped(sender: AnyObject) {
         self.currentCard += 1
         self.showFront = true
