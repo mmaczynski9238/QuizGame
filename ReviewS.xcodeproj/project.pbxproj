@@ -17,6 +17,7 @@
 		D74C020F1DB917E200E36297 /* UploadQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C020E1DB917E200E36297 /* UploadQViewController.swift */; };
 		D74C02111DB9181C00E36297 /* FlashCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C02101DB9181C00E36297 /* FlashCardsViewController.swift */; };
 		D772CF251DBA5FB000F39195 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D772CF241DBA5FB000F39195 /* ViewController1.swift */; };
+		D7A993331DDCB700009272DB /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A993321DDCB700009272DB /* TestViewController.swift */; };
 		D7CD23C11DBE52FC003449FA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD23C01DBE52FC003449FA /* RegisterViewController.swift */; };
 		D7D220E41DBE59010001AA1C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D220E31DBE59010001AA1C /* Card.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 		D74C020E1DB917E200E36297 /* UploadQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadQViewController.swift; sourceTree = "<group>"; };
 		D74C02101DB9181C00E36297 /* FlashCardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardsViewController.swift; sourceTree = "<group>"; };
 		D772CF241DBA5FB000F39195 /* ViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
+		D7A993321DDCB700009272DB /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		D7CD23C01DBE52FC003449FA /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D7D220E31DBE59010001AA1C /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				D73ED6B21DB7BD640057099D /* Main.storyboard */,
+				D7A993321DDCB700009272DB /* TestViewController.swift */,
 				D7CD23C01DBE52FC003449FA /* RegisterViewController.swift */,
 				D73ED6B01DB7BD640057099D /* MainViewController.swift */,
 				D772CF241DBA5FB000F39195 /* ViewController1.swift */,
@@ -192,6 +195,7 @@
 				D74C02111DB9181C00E36297 /* FlashCardsViewController.swift in Sources */,
 				D73ED6AF1DB7BD640057099D /* AppDelegate.swift in Sources */,
 				D74C020F1DB917E200E36297 /* UploadQViewController.swift in Sources */,
+				D7A993331DDCB700009272DB /* TestViewController.swift in Sources */,
 				D7D220E41DBE59010001AA1C /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
