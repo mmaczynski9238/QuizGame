@@ -164,7 +164,7 @@
         <!--Learn-->
         <scene sceneID="76V-r6-c8y">
             <objects>
-                <viewController id="atk-eZ-BlH" sceneMemberID="viewController">
+                <viewController id="atk-eZ-BlH" customClass="LearnViewController" customModule="ReviewS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DnZ-aY-TkI"/>
                         <viewControllerLayoutGuide type="bottom" id="fkN-Tu-A04"/>
@@ -209,7 +209,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz6-5a-dop">
-                                <frame key="frameInset" minX="191" minY="474" width="11" height="21"/>
+                                <frame key="frameInset" minX="196" minY="474" width="11" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -219,6 +219,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Learn" id="oPc-Dz-37h"/>
+                    <connections>
+                        <outlet property="answerTextField" destination="NJX-hG-YTw" id="ae3-B3-G2T"/>
+                        <outlet property="correctLabel" destination="yVG-dV-0BS" id="8L9-WS-L3F"/>
+                        <outlet property="termLabel" destination="dzN-oC-Tiv" id="JsB-Ng-VlZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ih4-Zs-5NV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
