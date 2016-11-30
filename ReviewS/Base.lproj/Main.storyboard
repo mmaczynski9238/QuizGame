@@ -215,6 +215,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bN4-A9-maW">
+                                <frame key="frameInset" minX="120" minY="251" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="checkButton:" destination="atk-eZ-BlH" eventType="touchUpInside" id="Avw-40-ecv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -222,6 +230,7 @@
                     <connections>
                         <outlet property="answerTextField" destination="NJX-hG-YTw" id="ae3-B3-G2T"/>
                         <outlet property="correctLabel" destination="yVG-dV-0BS" id="8L9-WS-L3F"/>
+                        <outlet property="incorrectLabel" destination="hz6-5a-dop" id="hWD-5G-KZr"/>
                         <outlet property="termLabel" destination="dzN-oC-Tiv" id="JsB-Ng-VlZ"/>
                     </connections>
                 </viewController>
