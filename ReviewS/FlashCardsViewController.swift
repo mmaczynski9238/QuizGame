@@ -25,35 +25,64 @@ class FlashCardsViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
     let cards: Array<Card> = [
-        Card(front: "front1", back: "back1"),
-        Card(front: "front2", back: "back2"),
-        Card(front: "front3", back: "back3")
+        Card(front: "front1", back: "back1", imagef: "", imageb: ""),
+        Card(front: "front2", back: "back2", imagef: "", imageb: ""),
+        Card(front: "front3", back: "back2", imagef: "", imageb: ""),
+        Card(front: "front4", back: "back4", imagef: "", imageb: ""),
+        Card(front: "front5", back: "back5", imagef: "", imageb: "")
+        
     ]
-    
+    ////
     var currentCard = 0
     var showFront = true
-    
+    @IBOutlet var fcview: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         showCard()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FlashCardsViewController.touchHappen))
+        view.addGestureRecognizer(tap)
+        
+        
     }
+    
+    func touchHappen() {
+        self.view.endEditing(true)
+        print("tapped")
+        flipCard()
+    }
+    
     
     func receiveQuestions()
     {
-//        if error = nil
-//        {
-//            scorePlusLabel.text = "Flashcard Saved"
-//            scorePlusLabel.textColor = UIColor.blackColor()
-//            scorePlusLabel.alpha = 0.0
-//            scorePlusLabel.fadeIn(duration: 0.1)
-//            scorePlusLabel.fadeOut(duration: 0.3)
-//
-//        }
+        //        if error = nil
+        //        {
+        //            scorePlusLabel.text = "Flashcard Saved"
+        //            scorePlusLabel.textColor = UIColor.blackColor()
+        //            scorePlusLabel.alpha = 0.0
+        //            scorePlusLabel.fadeIn(duration: 0.1)
+        //            scorePlusLabel.fadeOut(duration: 0.3)
+        //
+        //        }
     }
     
     
-    @IBAction func nextTapped(sender: AnyObject) {
+    
+    @IBAction func swipeLeft(sender: AnyObject) {
+        sLeft()
+        print("Swiped Left")
+        
+    }
+    
+    @IBAction func swipeRight(sender: AnyObject) {
+        sRight()
+        print("Swiped Right")
+        
+    }
+    
+    func sRight()
+    {
         self.currentCard += 1
         self.showFront = true
         
@@ -62,9 +91,11 @@ class FlashCardsViewController: UIViewController {
         }
         
         showCard()
+        
     }
     
-    @IBAction func backTapped(sender: AnyObject) {
+    func sLeft()
+    {
         self.currentCard -= 1
         self.showFront = true
         
@@ -73,9 +104,18 @@ class FlashCardsViewController: UIViewController {
         }
         
         showCard()
+        
+    }
+    @IBAction func nextTapped(sender: AnyObject) {
+        sRight()
     }
     
-    @IBAction func flipCardTapped(sender: AnyObject) {
+    @IBAction func backTapped(sender: AnyObject) {
+        sLeft()
+    }
+    
+    func flipCard()
+    {
         if (self.showFront) {
             self.showFront = false
         }
@@ -92,5 +132,9 @@ class FlashCardsViewController: UIViewController {
         else {
             self.cardLabel.text = self.cards[self.currentCard].back
         }
+        
+    }
+    @IBAction func flipCardTapped(sender: AnyObject) {
+        flipCard()
     }
 }
