@@ -8,28 +8,182 @@
 
 import UIKit
 
-class TestViewController: UIViewController {
+struct Question{
+    var Question : String!
+    var Answers : [String]!
+    var Answer : Int!
+}
 
+
+
+class TestViewController: UIViewController {
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button4: UIButton!
+    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet var Buttons: [UIButton]!
+    @IBOutlet weak var incorrectLabel: UILabel!
+    
+    @IBOutlet weak var restartBtn: UIButton!
+    var counter = 1
+    
+    var scoreLbl = UILabel()
+    
+    var score = Int()
+    
+    var Questions = [Question]()
+    
+    var QNumber = Int()
+    
+    var AnswerNumber = Int()
+    
+    var wrongAnswers = Int()
+    
+    var highScore = 0
+    
+    var finalScore = Int()
+    
+    @IBOutlet weak var QLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        resetQuestions()
+        
+        
+        scoreLbl = UILabel(frame: CGRect(x: 35, y: 45, width: 77, height: 45))
+        scoreLbl.textAlignment = NSTextAlignment.center
+        scoreLbl.text = "-1"
+        self.view.addSubview(scoreLbl)
+        
+        PickQuestions()
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func resetQuestions(){
+        Questions = [Question(Question: "What is the Biggest Hit of Bing Crosby?" , Answers: ["Swinging on a Star", "Now is the Hour", "White Christmas", "Beautiful Dreamer"], Answer: 2),
+                     Question(Question: "What is Elvis Presely's Middle Name?", Answers: ["Aaron", "Micheal", "George", "Matthew"], Answer: 0),
+                     Question(Question: "How Many Oscars did Titanic win?", Answers: ["5", "7", "10", "11"], Answer: 3),
+                     Question(Question: "From which country did Pit2ta Bread originate?", Answers: ["Spain", "France", "Greece", "Russia"], Answer: 2),
+                     Question(Question: "What is the largest living creature on Earth?", Answers: ["Whale", "Shark", "Sea Turtle", "Alligator"], Answer: 0),
+                     Question(Question: "What does ATM stand for?", Answers: ["Automatic Treasure Machine", "Automatic Tax Machine", "Anti Tax Machine", "Automatic Teller Machine"], Answer: 3),
+                     Question(Question: "What's the world's second largest French speaking city?", Answers: ["Paris", "Montreal", "Versailles", "Québec"], Answer: 1),
+                     Question(Question: "What Country is the largest producer of Olive Oil?", Answers: ["Italy", "France", "Greece", "Spain"], Answer: 3),
+                     Question(Question: "How long is the Great Wall of China?", Answers: ["3200 miles", "4000 miles", "2000 kilometers", "4500 miles"], Answer: 1),
+                     Question(Question: "Who is on the 10 dollar bill?", Answers: ["George Washington", "Thomas Jefferson", "Alexander Hamilton", "John Adams" ], Answer: 2),
+                     Question(Question: "How many World Series did Yogi Berra win as a player?", Answers: ["11", "10", "5", "7" ], Answer: 1),
+                     Question(Question: "Which three countries hosted the Winter Olympics during the 1990's?", Answers: ["Norway, France, Russia", "US, Sweeden, Canada", "Japan, Canada, Germany", "Slovenia, France, South Korea" ], Answer: 0),
+                     Question(Question: "Which of these foods is high in Vitamin C?", Answers: ["Carrot", "Potato", "Corn", "Tomato" ], Answer: 3),
+                     Question(Question: "How did John D. Rockefeller make his fortune?", Answers: ["Steel Industry", "Car Industry", "Oil Industry", "RailRoads" ], Answer: 2),
+                     Question(Question: "Who won the NBA Finals in 2014-2015?", Answers: ["Golden State Warriors", "Clevland Cavaliers", "Chicago Bulls", "Miami Heat" ], Answer: 3),
+                     Question(Question: "How many branches of government are there in the US?", Answers: ["2", "1", "3", "4" ], Answer: 2),
+                     Question(Question: "What were two common foods eaten by Americans during the Great Depression?", Answers: ["Soup and Bread", "Beans and Bread", "Potatos and Soup", "Bread and Potatos" ], Answer: 1),
+                     Question(Question: "Where are the Aleutian Islands?", Answers: ["Alaska, USA", "Northwest Territory, Canada", "Siberia, Russia", "Hawaii"], Answer: 1),
+                     Question(Question: "Which of the following NBA players below was drafted first overall?", Answers: ["Micheal Jordan", "Stephen Curry", "Kevin Durant", "Lebron James"], Answer: 3),]
+        
     }
-    */
-
+    func PickQuestions(){
+        
+        counter += 1
+        score += 1
+        scoreLbl.text = "\(score)"
+        
+        
+        
+        restartBtn.isEnabled = false
+        if Questions.count > 0 && counter <= 15 {
+            QNumber = Int(arc4random_uniform(UInt32(Questions.count)))
+            QLabel.text = Questions[QNumber].Question
+            
+            AnswerNumber = Questions[QNumber].Answer
+            
+            for i in 0..<Buttons.count{
+                Buttons[i].setTitle(Questions[QNumber].Answers[i], for: UIControlState())
+            }
+            Questions.remove(at: QNumber)
+        }
+            
+            
+        else{
+            //            saveHighScore()
+            //            theEnd.text = "You Win!"
+            //            theEnd.alpha = 1
+            button1.isEnabled = false
+            button2.isEnabled = false
+            button3.isEnabled = false
+            button4.isEnabled = false
+            score = finalScore
+            restartBtn.isEnabled = true
+            
+            func reset(){
+                ////                let alert = UIAlertController(title: "You Win", message: "Click Restart To Play Again", preferredStyle: UIAlertControllerStyle.alert)
+                //                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+                //                alert.addAction(okAction)
+                //                present(alert, animated: true, completion: nil)
+                //                PickQuestions()
+                //
+                
+                
+            }
+            reset()
+        }
+        
+        
+        incorrectLabel.alpha = 0
+        
+    }
+    
+    @IBAction func Btn1(_ sender: AnyObject) {
+        if AnswerNumber == 0{
+            PickQuestions()
+        }
+        else{
+            incorrectLabel.text = "You are incorrect!"
+            incorrectLabel.alpha = 1
+            score -= 1
+            scoreLbl.text = "\(score)"
+        }
+    }
+    @IBAction func Btn2(_ sender: AnyObject) {
+        if AnswerNumber == 1{
+            
+            PickQuestions()
+        }
+        else{
+            incorrectLabel.text = "You are Incorrect!"
+            incorrectLabel.alpha = 1
+            score -= 1
+            scoreLbl.text = "\(score)"
+        }
+        
+    }
+    @IBAction func Btn3(_ sender: AnyObject) {
+        if AnswerNumber == 2{
+            
+            PickQuestions()
+        }
+        else{
+            incorrectLabel.text = "You are Incorrect!"
+            incorrectLabel.alpha = 1
+            score -= 1
+            scoreLbl.text = "\(score)"
+        }
+    }
+    @IBAction func Btn4(_ sender: AnyObject) {
+        if AnswerNumber == 3{
+            
+            PickQuestions()
+        }
+        else{
+            incorrectLabel.text = "You are Incorrect!"
+            incorrectLabel.alpha = 1
+            score -= 1
+            scoreLbl.text = "\(score)"
+        }
+    }
+    
 }
+
