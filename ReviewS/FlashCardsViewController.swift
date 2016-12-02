@@ -25,11 +25,11 @@ class FlashCardsViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
     let cards: Array<Card> = [
-        Card(front: "front1", back: "back1", imagef: "", imageb: ""),
-        Card(front: "front2", back: "back2", imagef: "", imageb: ""),
-        Card(front: "front3", back: "back2", imagef: "", imageb: ""),
-        Card(front: "front4", back: "back4", imagef: "", imageb: ""),
-        Card(front: "front5", back: "back5", imagef: "", imageb: "")
+        Card(front: "Penny - Front", back: "Penny - Back", imagef: "fpenny", imageb: "bpenny"),
+        Card(front: "Nickel - Front", back: "Nickel - Back", imagef: "fnickel", imageb: "bnickel"),
+        Card(front: "Dime - Front", back: "Dime - Back", imagef: "fdime", imageb: "bdime"),
+        Card(front: "Dollar Coin - Front", back: "Dollar Coin - Back", imagef: "fdollarcoin", imageb: "bdollarcoin"),
+        Card(front: "Dime - Front", back: "Dime - Back", imagef: "fdime", imageb: "bdime")
         
     ]
     ////
@@ -72,6 +72,7 @@ class FlashCardsViewController: UIViewController {
     @IBAction func swipeLeft(sender: AnyObject) {
         sLeft()
         print("Swiped Left")
+        
         
     }
     
@@ -116,6 +117,8 @@ class FlashCardsViewController: UIViewController {
     
     func flipCard()
     {
+        
+        
         if (self.showFront) {
             self.showFront = false
         }
@@ -123,14 +126,27 @@ class FlashCardsViewController: UIViewController {
             self.showFront = true
         }
         showCard()
+        
+        
     }
     
     func showCard() {
         if (self.showFront) {
             self.cardLabel.text = self.cards[self.currentCard].front
+            
+            let cimage = "\(self.cards[self.currentCard].imagef)"
+            print(cimage)
+            imageView.image = UIImage(named:"\(cimage)")!
+
         }
         else {
             self.cardLabel.text = self.cards[self.currentCard].back
+            
+            
+            let cbimage = "\(self.cards[self.currentCard].imageb)"
+            print(cbimage)
+            imageView.image = UIImage(named:"\(cbimage)")!
+
         }
         
     }
