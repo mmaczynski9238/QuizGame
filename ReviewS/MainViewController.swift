@@ -32,15 +32,15 @@ class MainViewController: UIViewController {
                 UserDefaults.standard.set(true,forKey: "isLoggedIn")
                 UserDefaults.standard.synchronize()
                 self.dismiss(animated: true, completion: nil)
-                let viewController1: ViewController1 = ViewController1()
-                viewController1.view.backgroundColor = UIColor.blue
+//                let viewController1: ViewController1 = ViewController1()
+//                viewController1.view.backgroundColor = UIColor.blue
                 
-                self.present(viewController1, animated: true, completion: nil)
+//                self.present(viewController1, animated: true, completion: nil)
             }
             
             else if passwordStored != pass{
-                let viewController1: ViewController1 = ViewController1()
-                viewController1.view.backgroundColor = UIColor.red
+//                let viewController1: ViewController1 = ViewController1()
+//                viewController1.view.backgroundColor = UIColor.red
                 }
                 
             

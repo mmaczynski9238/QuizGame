@@ -16,11 +16,11 @@
 		D73ED6C61DB7C0510057099D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73ED6C51DB7C0510057099D /* CloudKit.framework */; };
 		D74C020F1DB917E200E36297 /* UploadQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C020E1DB917E200E36297 /* UploadQViewController.swift */; };
 		D74C02111DB9181C00E36297 /* FlashCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C02101DB9181C00E36297 /* FlashCardsViewController.swift */; };
-		D772CF251DBA5FB000F39195 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D772CF241DBA5FB000F39195 /* ViewController1.swift */; };
 		D7A993331DDCB700009272DB /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A993321DDCB700009272DB /* TestViewController.swift */; };
 		D7A993351DDCB7BB009272DB /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A993341DDCB7BB009272DB /* LearnViewController.swift */; };
 		D7CD23C11DBE52FC003449FA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD23C01DBE52FC003449FA /* RegisterViewController.swift */; };
 		D7D220E41DBE59010001AA1C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D220E31DBE59010001AA1C /* Card.swift */; };
+		DB26DB081DF27E3D0081FB41 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB26DB071DF27E3D0081FB41 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,11 +36,11 @@
 		D73ED6C51DB7C0510057099D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		D74C020E1DB917E200E36297 /* UploadQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadQViewController.swift; sourceTree = "<group>"; };
 		D74C02101DB9181C00E36297 /* FlashCardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardsViewController.swift; sourceTree = "<group>"; };
-		D772CF241DBA5FB000F39195 /* ViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 		D7A993321DDCB700009272DB /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		D7A993341DDCB7BB009272DB /* LearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		D7CD23C01DBE52FC003449FA /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D7D220E31DBE59010001AA1C /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		DB26DB071DF27E3D0081FB41 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,14 +78,11 @@
 				D73ED6B21DB7BD640057099D /* Main.storyboard */,
 				D7A993341DDCB7BB009272DB /* LearnViewController.swift */,
 				D7A993321DDCB700009272DB /* TestViewController.swift */,
-				D7CD23C01DBE52FC003449FA /* RegisterViewController.swift */,
-				D73ED6B01DB7BD640057099D /* MainViewController.swift */,
-				D772CF241DBA5FB000F39195 /* ViewController1.swift */,
-				D74C020E1DB917E200E36297 /* UploadQViewController.swift */,
 				D74C02101DB9181C00E36297 /* FlashCardsViewController.swift */,
-				D7D220E31DBE59010001AA1C /* Card.swift */,
-				D73ED6B81DB7BD640057099D /* Assets.xcassets */,
 				D74C02131DB9185000E36297 /* Other Files */,
+				DB26DB051DF261C90081FB41 /* Login FIles */,
+				DB26DB061DF262050081FB41 /* CloudKit */,
+				D73ED6B81DB7BD640057099D /* Assets.xcassets */,
 			);
 			path = ReviewS;
 			sourceTree = "<group>";
@@ -101,13 +98,32 @@
 		D74C02131DB9185000E36297 /* Other Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB26DB071DF27E3D0081FB41 /* UIViewExtensions.swift */,
 				D73ED6C31DB7C04B0057099D /* ReviewS.entitlements */,
+				D7D220E31DBE59010001AA1C /* Card.swift */,
 				D73ED6AE1DB7BD640057099D /* AppDelegate.swift */,
 				D73ED6BA1DB7BD640057099D /* LaunchScreen.storyboard */,
 				D73ED6BD1DB7BD640057099D /* Info.plist */,
 				D73ED6B51DB7BD640057099D /* ReviewS.xcdatamodeld */,
 			);
 			name = "Other Files";
+			sourceTree = "<group>";
+		};
+		DB26DB051DF261C90081FB41 /* Login FIles */ = {
+			isa = PBXGroup;
+			children = (
+				D7CD23C01DBE52FC003449FA /* RegisterViewController.swift */,
+				D73ED6B01DB7BD640057099D /* MainViewController.swift */,
+			);
+			name = "Login FIles";
+			sourceTree = "<group>";
+		};
+		DB26DB061DF262050081FB41 /* CloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				D74C020E1DB917E200E36297 /* UploadQViewController.swift */,
+			);
+			name = CloudKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,13 +207,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D772CF251DBA5FB000F39195 /* ViewController1.swift in Sources */,
 				D73ED6B11DB7BD640057099D /* MainViewController.swift in Sources */,
 				D7CD23C11DBE52FC003449FA /* RegisterViewController.swift in Sources */,
 				D73ED6B71DB7BD640057099D /* ReviewS.xcdatamodeld in Sources */,
 				D74C02111DB9181C00E36297 /* FlashCardsViewController.swift in Sources */,
 				D7A993351DDCB7BB009272DB /* LearnViewController.swift in Sources */,
 				D73ED6AF1DB7BD640057099D /* AppDelegate.swift in Sources */,
+				DB26DB081DF27E3D0081FB41 /* UIViewExtensions.swift in Sources */,
 				D74C020F1DB917E200E36297 /* UploadQViewController.swift in Sources */,
 				D7A993331DDCB700009272DB /* TestViewController.swift in Sources */,
 				D7D220E41DBE59010001AA1C /* Card.swift in Sources */,

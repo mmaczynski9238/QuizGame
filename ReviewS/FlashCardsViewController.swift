@@ -21,6 +21,14 @@ import UIKit
 
 class FlashCardsViewController: UIViewController {
     
+    @IBOutlet var firstView: UIView!
+    @IBOutlet var FVLabel: UILabel!
+    @IBOutlet var FVimageView: UIImageView!
+    
+    @IBOutlet var secondView: UIView!
+    @IBOutlet var SVimageView: UIImageView!
+    @IBOutlet var SVLabel: UILabel!
+    
     @IBOutlet var cardLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     
@@ -39,6 +47,11 @@ class FlashCardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        secondView.isHidden = true
+        
+        
+
+        
         showCard()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FlashCardsViewController.touchHappen))
@@ -47,12 +60,43 @@ class FlashCardsViewController: UIViewController {
         
     }
     
+    func flip() {
+        
+        if self.firstView.isHidden == true
+        {
+            let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+            UIView.transition(with: firstView, duration: 1.0, options: transitionOptions, animations: {
+                self.firstView.isHidden = false
+            })
+            
+            UIView.transition(with: secondView, duration: 1.0, options: transitionOptions, animations: {
+                self.secondView.isHidden = true
+            })
+
+        }
+        
+        else if self.secondView.isHidden == true
+        
+        {
+
+        let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        UIView.transition(with: firstView, duration: 1.0, options: transitionOptions, animations: {
+            self.firstView.isHidden = true
+        })
+        
+        UIView.transition(with: secondView, duration: 1.0, options: transitionOptions, animations: {
+            self.secondView.isHidden = false
+        })
+        }
+        
+    }
+
+    
     func touchHappen() {
         self.view.endEditing(true)
         print("tapped")
         flipCard()
     }
-    
     
     func receiveQuestions()
     {
@@ -67,21 +111,36 @@ class FlashCardsViewController: UIViewController {
         //        }
     }
     
-    
-    
-    @IBAction func swipeLeft(sender: AnyObject) {
+    @IBAction func swipeLeftSV(_ sender: UISwipeGestureRecognizer) {
         sLeft()
-        print("Swiped Left")
-        
-        
+        firstView.slideInFromRight()
+        secondView.slideInFromRight()
+
     }
     
-    @IBAction func swipeRight(sender: AnyObject) {
+    @IBAction func swipeRightSV(_ sender: UISwipeGestureRecognizer) {
+        firstView.slideInFromLeft()
+        secondView.slideInFromLeft()
+
+
         sRight()
-        print("Swiped Right")
-        
     }
     
+    @IBAction func swipeLeftFV(_ sender: UISwipeGestureRecognizer) {
+        firstView.slideInFromRight()
+        secondView.slideInFromRight()
+
+        sLeft()
+
+    }
+    
+    @IBAction func swipeRightFV(_ sender: UISwipeGestureRecognizer) {
+        firstView.slideInFromLeft()
+        secondView.slideInFromLeft()
+
+        sRight()
+    }
+        
     func sRight()
     {
         self.currentCard += 1
@@ -117,8 +176,8 @@ class FlashCardsViewController: UIViewController {
     
     func flipCard()
     {
-        
-        
+        perform(#selector(flip), with: nil, afterDelay: 0)
+
         if (self.showFront) {
             self.showFront = false
         }
@@ -127,30 +186,58 @@ class FlashCardsViewController: UIViewController {
         }
         showCard()
         
-        
     }
     
     func showCard() {
-        if (self.showFront) {
-            self.cardLabel.text = self.cards[self.currentCard].front
-            
-            let cimage = "\(self.cards[self.currentCard].imagef)"
-            print(cimage)
-            imageView.image = UIImage(named:"\(cimage)")!
-
-        }
-        else {
-            self.cardLabel.text = self.cards[self.currentCard].back
+        
+        if self.firstView.isHidden == true
+        {
+            self.SVLabel.text = self.cards[self.currentCard].back
             
             
             let cbimage = "\(self.cards[self.currentCard].imageb)"
             print(cbimage)
-            imageView.image = UIImage(named:"\(cbimage)")!
+            SVimageView.image = UIImage(named:"\(cbimage)")!
 
         }
+            
+        else if self.secondView.isHidden == true
+            
+        {
+            self.FVLabel.text = self.cards[self.currentCard].front
+            
+            let cimage = "\(self.cards[self.currentCard].imagef)"
+            print(cimage)
+            FVimageView.image = UIImage(named:"\(cimage)")!
+
+        }
+
+        
+//        if (self.showFront) {
+//            self.cardLabel.text = self.cards[self.currentCard].front
+//            
+//            let cimage = "\(self.cards[self.currentCard].imagef)"
+//            print(cimage)
+//            imageView.image = UIImage(named:"\(cimage)")!
+//
+//        }
+//        else {
+//            self.cardLabel.text = self.cards[self.currentCard].back
+//            
+//            
+//            let cbimage = "\(self.cards[self.currentCard].imageb)"
+//            print(cbimage)
+//            imageView.image = UIImage(named:"\(cbimage)")!
+//
+//        }
         
     }
     @IBAction func flipCardTapped(sender: AnyObject) {
+        
+        perform(#selector(flip), with: nil, afterDelay: 0)
+        
+        self.view.endEditing(true)
+
         flipCard()
     }
 }

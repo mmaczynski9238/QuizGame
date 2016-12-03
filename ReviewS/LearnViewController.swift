@@ -28,7 +28,7 @@ class LearnViewController: UIViewController {
         super.viewDidLoad()
         
         termAnswer.append(("brent","gurvis"))
-        termAnswer.append(("Mac and", "cheese"))
+        termAnswer.append(("Mac and _____", "cheese"))
         print(termAnswer.last?.0)
         
         
