@@ -112,37 +112,69 @@ class FlashCardsViewController: UIViewController {
     }
     
     @IBAction func swipeLeftSV(_ sender: UISwipeGestureRecognizer) {
-        sLeft()
         firstView.slideInFromRight()
         secondView.slideInFromRight()
-
+        
+        self.currentCard += 1
+        self.showFront = true
+        
+        if (self.currentCard >= self.cards.count) {
+            self.currentCard = self.cards.count - 1
+        }
+        
+        showCard()
     }
     
     @IBAction func swipeRightSV(_ sender: UISwipeGestureRecognizer) {
         firstView.slideInFromLeft()
         secondView.slideInFromLeft()
-
-
-        sRight()
+        
+        self.currentCard += 1
+        self.showFront = true
+        
+        if (self.currentCard >= self.cards.count) {
+            self.currentCard = self.cards.count - 1
+        }
+        
+        showCard()
     }
     
     @IBAction func swipeLeftFV(_ sender: UISwipeGestureRecognizer) {
         firstView.slideInFromRight()
         secondView.slideInFromRight()
-
-        sLeft()
-
+        
+        self.currentCard += 1
+        self.showFront = true
+        
+        if (self.currentCard >= self.cards.count) {
+            self.currentCard = self.cards.count - 1
+        }
+        
+        showCard()
     }
     
     @IBAction func swipeRightFV(_ sender: UISwipeGestureRecognizer) {
         firstView.slideInFromLeft()
         secondView.slideInFromLeft()
+        
+        self.currentCard += 1
+        self.showFront = true
+        
+        if (self.currentCard >= self.cards.count) {
+            self.currentCard = self.cards.count - 1
+        }
+        
+        showCard()
 
-        sRight()
+
     }
         
     func sRight()
     {
+        firstView.slideInFromRight()
+        secondView.slideInFromRight()
+
+        
         self.currentCard += 1
         self.showFront = true
         
@@ -156,6 +188,10 @@ class FlashCardsViewController: UIViewController {
     
     func sLeft()
     {
+        firstView.slideInFromLeft()
+        secondView.slideInFromLeft()
+
+        
         self.currentCard -= 1
         self.showFront = true
         
