@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Trivia-->
+        <!--View Controller-->
         <scene sceneID="bAw-KB-9q1">
             <objects>
                 <viewController id="5o3-Pt-LqA" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Trivia" id="oT0-Gl-BZX"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="oT0-Gl-BZX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRX-mR-x2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,14 +71,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="myw-Cb-ap1"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-7" id="myw-Cb-ap1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUb-n8-TkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="393.75" y="-1505.2734375"/>
         </scene>
-        <!--Flash Cards View Controller-->
+        <!--Flashcard-->
         <scene sceneID="lOY-Zs-QAV">
             <objects>
                 <viewController id="FYc-mz-TkM" customClass="FlashCardsViewController" customModule="ReviewS" customModuleProvider="target" sceneMemberID="viewController">
@@ -168,7 +168,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="oab-IM-ZhP"/>
+                    <tabBarItem key="tabBarItem" title="Flashcard" image="photos-simple-7" id="oab-IM-ZhP"/>
                     <connections>
                         <outlet property="FVLabel" destination="92M-WO-Req" id="k1e-et-xTS"/>
                         <outlet property="FVimageView" destination="LEX-9b-RRy" id="WhY-JF-on4"/>
@@ -267,7 +267,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Study" id="oPc-Dz-37h"/>
+                    <tabBarItem key="tabBarItem" title="Study" image="file-list-tick-7" id="oPc-Dz-37h"/>
                     <connections>
                         <outlet property="answerTextField" destination="NJX-hG-YTw" id="ae3-B3-G2T"/>
                         <outlet property="correctLabel" destination="yVG-dV-0BS" id="8L9-WS-L3F"/>
@@ -526,7 +526,6 @@
                     <connections>
                         <segue destination="vEY-qg-1Km" kind="relationship" relationship="viewControllers" id="SZj-pX-c15"/>
                         <segue destination="FYc-mz-TkM" kind="relationship" relationship="viewControllers" id="64A-pd-u3r"/>
-                        <segue destination="5o3-Pt-LqA" kind="relationship" relationship="viewControllers" id="5vS-gZ-2LZ"/>
                         <segue destination="atk-eZ-BlH" kind="relationship" relationship="viewControllers" id="bLU-ZY-A4l"/>
                         <segue destination="YlU-ys-6xQ" kind="relationship" relationship="viewControllers" id="eZY-KV-fri"/>
                     </connections>
@@ -535,7 +534,7 @@
             </objects>
             <point key="canvasLocation" x="-546" y="-482"/>
         </scene>
-        <!--Test View Controller-->
+        <!--Test-->
         <scene sceneID="0Q5-OO-DDZ">
             <objects>
                 <viewController id="YlU-ys-6xQ" customClass="TestViewController" customModule="ReviewS" customModuleProvider="target" sceneMemberID="viewController">
@@ -627,7 +626,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="B2J-Vh-GAK"/>
+                    <tabBarItem key="tabBarItem" title="Test" image="file-document-7" id="B2J-Vh-GAK"/>
                     <connections>
                         <outlet property="QLabel" destination="xHy-bO-EVs" id="8IM-hE-RuY"/>
                         <outlet property="button1" destination="SAx-sP-B6k" id="1Of-2H-CJs"/>
@@ -649,6 +648,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="file-document-7" width="30" height="30"/>
+        <image name="file-list-tick-7" width="30" height="30"/>
+        <image name="home-7" width="30" height="30"/>
         <image name="mainstudy" width="559" height="583"/>
+        <image name="photos-simple-7" width="30" height="30"/>
     </resources>
 </document>
