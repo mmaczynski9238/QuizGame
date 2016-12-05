@@ -24,6 +24,8 @@ class TestViewController: UIViewController {
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet var Buttons: [UIButton]!
     @IBOutlet weak var incorrectLabel: UILabel!
+    @IBOutlet weak var percentLabel: UILabel!
+    @IBOutlet weak var theEnd: UILabel!
     
     @IBOutlet weak var restartBtn: UIButton!
     var counter = 1
@@ -43,6 +45,11 @@ class TestViewController: UIViewController {
     var highScore = 0
     
     var finalScore = Int()
+    
+    var correctAnswers = Int()
+    
+    var incorrectAnswers = Int()
+    
     
     @IBOutlet weak var QLabel: UILabel!
     override func viewDidLoad() {
@@ -67,7 +74,7 @@ class TestViewController: UIViewController {
         Questions = [Question(Question: "What is the Biggest Hit of Bing Crosby?" , Answers: ["Swinging on a Star", "Now is the Hour", "White Christmas", "Beautiful Dreamer"], Answer: 2),
                      Question(Question: "What is Elvis Presely's Middle Name?", Answers: ["Aaron", "Micheal", "George", "Matthew"], Answer: 0),
                      Question(Question: "How Many Oscars did Titanic win?", Answers: ["5", "7", "10", "11"], Answer: 3),
-                     Question(Question: "From which country did Pit2ta Bread originate?", Answers: ["Spain", "France", "Greece", "Russia"], Answer: 2),
+                     Question(Question: "From which country did Pita Bread originate?", Answers: ["Spain", "France", "Greece", "Russia"], Answer: 2),
                      Question(Question: "What is the largest living creature on Earth?", Answers: ["Whale", "Shark", "Sea Turtle", "Alligator"], Answer: 0),
                      Question(Question: "What does ATM stand for?", Answers: ["Automatic Treasure Machine", "Automatic Tax Machine", "Anti Tax Machine", "Automatic Teller Machine"], Answer: 3),
                      Question(Question: "What's the world's second largest French speaking city?", Answers: ["Paris", "Montreal", "Versailles", "Québec"], Answer: 1),
@@ -77,11 +84,11 @@ class TestViewController: UIViewController {
                      Question(Question: "How many World Series did Yogi Berra win as a player?", Answers: ["11", "10", "5", "7" ], Answer: 1),
                      Question(Question: "Which three countries hosted the Winter Olympics during the 1990's?", Answers: ["Norway, France, Russia", "US, Sweeden, Canada", "Japan, Canada, Germany", "Slovenia, France, South Korea" ], Answer: 0),
                      Question(Question: "Which of these foods is high in Vitamin C?", Answers: ["Carrot", "Potato", "Corn", "Tomato" ], Answer: 3),
-                     Question(Question: "How did John D. Rockefeller make his fortune?", Answers: ["Steel Industry", "Car Industry", "Oil Industry", "RailRoads" ], Answer: 2),
+                     Question(Question: "How did John D. Rockefeller make his fortune?", Answers: ["Steel Industry", "Car Industry", "Oil Industry", "RailRoads" ], Answer: 1),
                      Question(Question: "Who won the NBA Finals in 2014-2015?", Answers: ["Golden State Warriors", "Clevland Cavaliers", "Chicago Bulls", "Miami Heat" ], Answer: 3),
                      Question(Question: "How many branches of government are there in the US?", Answers: ["2", "1", "3", "4" ], Answer: 2),
                      Question(Question: "What were two common foods eaten by Americans during the Great Depression?", Answers: ["Soup and Bread", "Beans and Bread", "Potatos and Soup", "Bread and Potatos" ], Answer: 1),
-                     Question(Question: "Where are the Aleutian Islands?", Answers: ["Alaska, USA", "Northwest Territory, Canada", "Siberia, Russia", "Hawaii"], Answer: 1),
+//                     Question(Question: "Where are the Aleutian Islands?", Answers: ["Alaska, USA", "Northwest Territory, Canada", "Siberia, Russia", "Hawaii"], Answer: 1),
                      Question(Question: "Which of the following NBA players below was drafted first overall?", Answers: ["Micheal Jordan", "Stephen Curry", "Kevin Durant", "Lebron James"], Answer: 3),]
         
     }
@@ -101,7 +108,12 @@ class TestViewController: UIViewController {
             AnswerNumber = Questions[QNumber].Answer
             
             for i in 0..<Buttons.count{
-                Buttons[i].setTitle(Questions[QNumber].Answers[i], for: UIControlState())
+                //                Buttons[i].setTitle(Questions[QNumber].Answers[i], for: UIControlState())
+                button1.setTitle(Questions[QNumber].Answers[0], for: UIControlState())
+                button2.setTitle(Questions[QNumber].Answers[1], for: UIControlState())
+                button3.setTitle(Questions[QNumber].Answers[2], for: UIControlState())
+                button4.setTitle(Questions[QNumber].Answers[3], for: UIControlState())
+                
             }
             Questions.remove(at: QNumber)
         }
@@ -109,22 +121,25 @@ class TestViewController: UIViewController {
             
         else{
             //            saveHighScore()
-            //            theEnd.text = "You Win!"
-            //            theEnd.alpha = 1
+            theEnd.text = "You Win!"
+            theEnd.alpha = 1
             button1.isEnabled = false
             button2.isEnabled = false
             button3.isEnabled = false
             button4.isEnabled = false
             score = finalScore
             restartBtn.isEnabled = true
+            var icad = incorrectAnswers/15
+            percentLabel.text = "\(15 - icad)"
             
             func reset(){
-                ////                let alert = UIAlertController(title: "You Win", message: "Click Restart To Play Again", preferredStyle: UIAlertControllerStyle.alert)
-                //                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
-                //                alert.addAction(okAction)
-                //                present(alert, animated: true, completion: nil)
-                //                PickQuestions()
-                //
+//                let alert = UIAlertController(title: "You Win", message: "Click Restart To Play Again", preferredStyle: UIAlertControllerStyle.alert)
+//                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+//                alert.addAction(okAction)
+//                present(alert, animated: true, completion: nil)
+//                PickQuestions()
+                
+                
                 
                 
             }
@@ -139,24 +154,29 @@ class TestViewController: UIViewController {
     @IBAction func Btn1(_ sender: AnyObject) {
         if AnswerNumber == 0{
             PickQuestions()
+            correctAnswers+=1
         }
         else{
             incorrectLabel.text = "You are incorrect!"
             incorrectLabel.alpha = 1
             score -= 1
             scoreLbl.text = "\(score)"
+            incorrectAnswers+=1
         }
     }
     @IBAction func Btn2(_ sender: AnyObject) {
         if AnswerNumber == 1{
             
             PickQuestions()
+            correctAnswers+=1
+            
         }
         else{
             incorrectLabel.text = "You are Incorrect!"
             incorrectLabel.alpha = 1
             score -= 1
             scoreLbl.text = "\(score)"
+            incorrectAnswers+=1
         }
         
     }
@@ -164,24 +184,33 @@ class TestViewController: UIViewController {
         if AnswerNumber == 2{
             
             PickQuestions()
+            correctAnswers+=1
+            
         }
         else{
             incorrectLabel.text = "You are Incorrect!"
             incorrectLabel.alpha = 1
             score -= 1
             scoreLbl.text = "\(score)"
+            incorrectAnswers+=1
+            
+            
         }
     }
     @IBAction func Btn4(_ sender: AnyObject) {
         if AnswerNumber == 3{
             
             PickQuestions()
+            correctAnswers+=1
+            
         }
         else{
             incorrectLabel.text = "You are Incorrect!"
             incorrectLabel.alpha = 1
             score -= 1
             scoreLbl.text = "\(score)"
+            incorrectAnswers+=1
+            
         }
     }
     
