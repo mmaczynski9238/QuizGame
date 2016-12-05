@@ -108,15 +108,6 @@
                                     <action selector="nextTappedWithSender:" destination="FYc-mz-TkM" eventType="touchUpInside" id="7ZO-qi-qK6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68a-Xn-kOW">
-                                <rect key="frame" x="339" y="898" width="98" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
-                                <state key="normal" title="Flip"/>
-                                <connections>
-                                    <action selector="flipCardTappedWithSender:" destination="FYc-mz-TkM" eventType="touchUpInside" id="obR-Vx-lFJ"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KWH-Cr-TzQ" userLabel="Background">
                                 <rect key="frame" x="0.0" y="20" width="768" height="882"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -144,7 +135,7 @@
                                             <outletCollection property="gestureRecognizers" destination="wWW-jQ-RBH" appends="YES" id="dwn-kw-3qR"/>
                                         </connections>
                                     </view>
-                                    <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22H-gl-9E2">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22H-gl-9E2">
                                         <rect key="frame" x="25" y="35" width="718" height="812"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>

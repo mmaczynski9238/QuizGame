@@ -111,6 +111,7 @@ class FlashCardsViewController: UIViewController {
         //        }
     }
     
+    
     @IBAction func swipeLeftSV(_ sender: UISwipeGestureRecognizer) {
         firstView.slideInFromRight()
         secondView.slideInFromRight()
@@ -119,27 +120,31 @@ class FlashCardsViewController: UIViewController {
         self.showFront = true
         
         if (self.currentCard >= self.cards.count) {
-            self.currentCard = self.cards.count - 1
+            self.currentCard = 0
         }
         
         showCard()
     }
     
     @IBAction func swipeRightSV(_ sender: UISwipeGestureRecognizer) {
-        firstView.slideInFromLeft()
-        secondView.slideInFromLeft()
         
-        self.currentCard += 1
         self.showFront = true
         
-        if (self.currentCard >= self.cards.count) {
-            self.currentCard = self.cards.count - 1
+        if (self.currentCard == 0) {
+            
+        } else {
+            self.currentCard -= 1
+            firstView.slideInFromLeft()
+            secondView.slideInFromLeft()
+
+
         }
         
         showCard()
     }
     
     @IBAction func swipeLeftFV(_ sender: UISwipeGestureRecognizer) {
+        
         firstView.slideInFromRight()
         secondView.slideInFromRight()
         
@@ -147,21 +152,24 @@ class FlashCardsViewController: UIViewController {
         self.showFront = true
         
         if (self.currentCard >= self.cards.count) {
-            self.currentCard = self.cards.count - 1
+            self.currentCard = 0
         }
         
         showCard()
     }
     
     @IBAction func swipeRightFV(_ sender: UISwipeGestureRecognizer) {
-        firstView.slideInFromLeft()
-        secondView.slideInFromLeft()
         
-        self.currentCard += 1
         self.showFront = true
         
-        if (self.currentCard >= self.cards.count) {
-            self.currentCard = self.cards.count - 1
+        if (self.currentCard == 0) {
+            
+        } else {
+            self.currentCard -= 1
+            firstView.slideInFromLeft()
+            secondView.slideInFromLeft()
+            
+            
         }
         
         showCard()
@@ -173,34 +181,32 @@ class FlashCardsViewController: UIViewController {
     {
         firstView.slideInFromRight()
         secondView.slideInFromRight()
-
         
         self.currentCard += 1
         self.showFront = true
         
         if (self.currentCard >= self.cards.count) {
-            self.currentCard = self.cards.count - 1
-        }
-        
-        showCard()
-        
-    }
-    
-    func sLeft()
-    {
-        firstView.slideInFromLeft()
-        secondView.slideInFromLeft()
-
-        
-        self.currentCard -= 1
-        self.showFront = true
-        
-        if (self.currentCard < 0) {
             self.currentCard = 0
         }
         
         showCard()
+    }
+    
+    func sLeft()
+    {
+        self.showFront = true
         
+        if (self.currentCard == 0) {
+            
+        } else {
+            self.currentCard -= 1
+            firstView.slideInFromLeft()
+            secondView.slideInFromLeft()
+            
+            
+        }
+        
+        showCard()
     }
     @IBAction func nextTapped(sender: AnyObject) {
         sRight()
@@ -226,8 +232,8 @@ class FlashCardsViewController: UIViewController {
     
     func showCard() {
         
-        if self.firstView.isHidden == true
-        {
+//        if self.firstView.isHidden == true
+//        {
             self.SVLabel.text = self.cards[self.currentCard].back
             
             
@@ -235,18 +241,18 @@ class FlashCardsViewController: UIViewController {
             print(cbimage)
             SVimageView.image = UIImage(named:"\(cbimage)")!
 
-        }
+        //}
             
-        else if self.secondView.isHidden == true
-            
-        {
+//        else if self.secondView.isHidden == true
+//            
+//        {
             self.FVLabel.text = self.cards[self.currentCard].front
             
             let cimage = "\(self.cards[self.currentCard].imagef)"
             print(cimage)
             FVimageView.image = UIImage(named:"\(cimage)")!
 
-        }
+        //}
 
         
 //        if (self.showFront) {
@@ -267,13 +273,5 @@ class FlashCardsViewController: UIViewController {
 //
 //        }
         
-    }
-    @IBAction func flipCardTapped(sender: AnyObject) {
-        
-        perform(#selector(flip), with: nil, afterDelay: 0)
-        
-        self.view.endEditing(true)
-
-        flipCard()
     }
 }
