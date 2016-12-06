@@ -9,6 +9,7 @@
 import Foundation
 
 class Card {
+    
     let front: String
     let back: String
     let imagef: String
@@ -19,7 +20,21 @@ class Card {
         self.back = back
         self.imagef = imagef
         self.imageb = imageb
-        
-        
     }
 }
+
+class StarredCard {
+    
+    let frontS: String
+    let backS: String
+    let imagefS: String
+    let imagebS: String
+    
+    init(frontS: String, backS: String, imagefS: String, imagebS: String) {
+        self.frontS = frontS
+        self.backS = backS
+        self.imagefS = imagefS
+        self.imagebS = imagebS
+    }
+}
+

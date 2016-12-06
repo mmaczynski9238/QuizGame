@@ -20,13 +20,7 @@ class StarredFlashCardsViewController: UIViewController {
     @IBOutlet var SSVimageView: UIImageView!
     @IBOutlet var SSVlabel: UILabel!
     
-    let cards: Array<Card> = [
-        Card(front: "Penny - Front", back: "Penny - Back", imagef: "fpenny", imageb: "bpenny"),
-        Card(front: "Nickel - Front", back: "Nickel - Back", imagef: "fnickel", imageb: "bnickel"),
-        Card(front: "Dime - Front", back: "Dime - Back", imagef: "fdime", imageb: "bdime"),
-        Card(front: "Dollar Coin - Front", back: "Dollar Coin - Back", imagef: "fdollarcoin", imageb: "bdollarcoin"),
-        Card(front: "Dime - Front", back: "Dime - Back", imagef: "fdime", imageb: "bdime")
-    ]
+    let cards: Array<StarredCard> = []
     var currentCard = 0
     var showFront = true
 
@@ -181,15 +175,15 @@ class StarredFlashCardsViewController: UIViewController {
     
     func showCard() {
         
-        self.SSVlabel.text = self.cards[self.currentCard].back
+        self.SSVlabel.text = self.cards[self.currentCard].backS
         
-        let cbimage = "\(self.cards[self.currentCard].imageb)"
+        let cbimage = "\(self.cards[self.currentCard].imagebS)"
         print(cbimage)
         SSVimageView.image = UIImage(named:"\(cbimage)")!
         
-        self.SFVlabel.text = self.cards[self.currentCard].front
+        self.SFVlabel.text = self.cards[self.currentCard].frontS
         
-        let cimage = "\(self.cards[self.currentCard].imagef)"
+        let cimage = "\(self.cards[self.currentCard].imagefS)"
         print(cimage)
         SFVimageView.image = UIImage(named:"\(cimage)")!
         

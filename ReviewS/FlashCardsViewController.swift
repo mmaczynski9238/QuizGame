@@ -21,6 +21,8 @@ class FlashCardsViewController: UIViewController {
     @IBOutlet var cardLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     
+    let starredCards: Array<StarredCard> = []
+    
     let cards: Array<Card> = [
         Card(front: "Penny - Front", back: "Penny - Back", imagef: "fpenny", imageb: "bpenny"),
         Card(front: "Nickel - Front", back: "Nickel - Back", imagef: "fnickel", imageb: "bnickel"),
@@ -194,4 +196,14 @@ class FlashCardsViewController: UIViewController {
         FVimageView.image = UIImage(named:"\(cimage)")!
         
     }
+    
+    
+    @IBAction func starCurrentFlashcard(_ sender: UIButton) {
+        let starredCards: Array<StarredCard> = [
+
+        StarredCard(frontS: "\(self.cards[self.currentCard].front)", backS: "\(self.cards[self.currentCard].back)", imagefS: "\(self.cards[self.currentCard].imagef)", imagebS: "\(self.cards[self.currentCard].imageb)")
+    ]
+    }
+    
+    
 }
