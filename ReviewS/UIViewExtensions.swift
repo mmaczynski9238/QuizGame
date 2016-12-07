@@ -11,7 +11,7 @@ import Foundation
 
 extension UIView {
     // slideFromLeft, slideRight, slideLeftToRight, etc. are great alternative names
-    func slideInFromLeft(duration: TimeInterval = 0.2, completionDelegate: AnyObject? = nil) {
+    func slideInFromLeft(duration: TimeInterval = 0.3, completionDelegate: AnyObject? = nil) {
         // Create a CATransition animation
         let slideInFromLeftTransition = CATransition()
         
@@ -31,7 +31,7 @@ extension UIView {
         self.layer.add(slideInFromLeftTransition, forKey: "slideInFromLeftTransition")
     }
     
-    func slideInFromRight(duration: TimeInterval = 0.2, completionDelegate: AnyObject? = nil) {
+    func slideInFromRight(duration: TimeInterval = 0.3, completionDelegate: AnyObject? = nil) {
         // Create a CATransition animation
         let slideInFromRightTransition = CATransition()
         

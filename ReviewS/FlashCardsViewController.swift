@@ -20,6 +20,9 @@ class FlashCardsViewController: UIViewController {
     
     @IBOutlet var cardLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var starButtonImageFV: UIButton!
+    
+    @IBOutlet var starButtonImageSV: UIButton!
     
     let starredCards: Array<StarredCard> = []
     
@@ -203,6 +206,14 @@ class FlashCardsViewController: UIViewController {
 
         StarredCard(frontS: "\(self.cards[self.currentCard].front)", backS: "\(self.cards[self.currentCard].back)", imagefS: "\(self.cards[self.currentCard].imagef)", imagebS: "\(self.cards[self.currentCard].imageb)")
     ]
+    
+    }
+    
+    @IBAction func starCurrentFlashcardFIrstView(_ sender: UIButton) {
+        let starredCards: Array<StarredCard> = [
+            
+            StarredCard(frontS: "\(self.cards[self.currentCard].front)", backS: "\(self.cards[self.currentCard].back)", imagefS: "\(self.cards[self.currentCard].imagef)", imagebS: "\(self.cards[self.currentCard].imageb)")
+        ]
     }
     
     

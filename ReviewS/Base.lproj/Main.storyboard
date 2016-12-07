@@ -124,6 +124,16 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pb-36-2tH">
+                                                <frame key="frameInset" minX="649" minY="4" width="65" height="65"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Star" image="star"/>
+                                                <state key="highlighted" image="highlightedStar"/>
+                                                <connections>
+                                                    <action selector="starCurrentFlashcard:" destination="FYc-mz-TkM" eventType="touchUpInside" id="QhB-a3-qJA"/>
+                                                    <action selector="starCurrentFlashcardFIrstView:" destination="FYc-mz-TkM" eventType="touchUpInside" id="97j-I1-mao"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
@@ -132,26 +142,26 @@
                                             <outletCollection property="gestureRecognizers" destination="wWW-jQ-RBH" appends="YES" id="dwn-kw-3qR"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22H-gl-9E2">
+                                    <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22H-gl-9E2">
                                         <frame key="frameInset" minX="25" minY="35" width="718" height="812"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bvZ-eI-rFm">
+                                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bvZ-eI-rFm">
                                                 <frame key="frameInset" minX="159" minY="8" width="400" height="400"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFu-X1-9dh">
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFu-X1-9dh">
                                                 <frame key="frameInset" minX="138" minY="541" width="443" height="131"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUT-h8-muk">
-                                                <frame key="frameInset" minX="652" width="63" height="49"/>
+                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUT-h8-muk">
+                                                <frame key="frameInset" minX="649" minY="4" width="65" height="65"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <state key="normal" title="Star"/>
+                                                <state key="normal" title="Star" image="star"/>
+                                                <state key="highlighted" image="highlightedStar"/>
                                                 <connections>
                                                     <action selector="starCurrentFlashcard:" destination="FYc-mz-TkM" eventType="touchUpInside" id="UoC-SS-1hj"/>
                                                 </connections>
@@ -191,6 +201,8 @@
                         <outlet property="SVimageView" destination="bvZ-eI-rFm" id="uLk-XM-ouJ"/>
                         <outlet property="firstView" destination="ilb-W5-7K5" id="z1i-zr-6vY"/>
                         <outlet property="secondView" destination="22H-gl-9E2" id="1t8-lS-aJP"/>
+                        <outlet property="starButtonImageFV" destination="4pb-36-2tH" id="dDg-dJ-zXz"/>
+                        <outlet property="starButtonImageSV" destination="FUT-h8-muk" id="9x2-T5-8Yp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZoC-us-Phq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -818,8 +830,10 @@
     <resources>
         <image name="file-document-7" width="30" height="30"/>
         <image name="file-list-tick-7" width="30" height="30"/>
+        <image name="highlightedStar" width="4082" height="3841"/>
         <image name="home-7" width="30" height="30"/>
         <image name="mainstudy" width="559" height="583"/>
         <image name="photos-simple-7" width="30" height="30"/>
+        <image name="star" width="4130" height="3886"/>
     </resources>
 </document>
