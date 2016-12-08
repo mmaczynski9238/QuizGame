@@ -164,6 +164,7 @@ class FlashCardsViewController: UIViewController {
     }
     @IBAction func nextTapped(sender: AnyObject) {
         sRight()
+        
     }
     
     @IBAction func backTapped(sender: AnyObject) {
@@ -207,6 +208,20 @@ class FlashCardsViewController: UIViewController {
         StarredCard(frontS: "\(self.cards[self.currentCard].front)", backS: "\(self.cards[self.currentCard].back)", imagefS: "\(self.cards[self.currentCard].imagef)", imagebS: "\(self.cards[self.currentCard].imageb)")
     ]
     
+//        if starButtonImageSV.currentImage == UIImage(named: "highlightedStar") as UIImage?
+//        {
+//            
+//            let S = UIImage(named: "star") as UIImage?
+//            
+//            starButtonImageSV.setImage(S, for: .normal)
+//        } else {
+            let HS = UIImage(named: "highlightedStar") as UIImage?
+            
+            starButtonImageSV.setImage(HS, for: .normal)
+            
+//        }
+
+        
     }
     
     @IBAction func starCurrentFlashcardFIrstView(_ sender: UIButton) {
@@ -214,6 +229,21 @@ class FlashCardsViewController: UIViewController {
             
             StarredCard(frontS: "\(self.cards[self.currentCard].front)", backS: "\(self.cards[self.currentCard].back)", imagefS: "\(self.cards[self.currentCard].imagef)", imagebS: "\(self.cards[self.currentCard].imageb)")
         ]
+        
+//        if starButtonImageFV.currentImage == UIImage(named: "highlightedStar") as UIImage?
+//        {
+//            
+//        let S = UIImage(named: "star") as UIImage?
+//
+//        starButtonImageFV.setImage(S, for: .normal)
+//            
+//        } else if starButtonImageFV.currentImage == UIImage(named: "star") as UIImage? {
+            let HS = UIImage(named: "highlightedStar") as UIImage?
+            
+            starButtonImageFV.setImage(HS, for: .normal)
+
+//        }
+        
     }
     
     

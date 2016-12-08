@@ -20,7 +20,10 @@ class StarredFlashCardsViewController: UIViewController {
     @IBOutlet var SSVimageView: UIImageView!
     @IBOutlet var SSVlabel: UILabel!
     
-    let cards: Array<StarredCard> = []
+    let cards: Array<StarredCard> = [
+        StarredCard(frontS: "Dime - Front", backS: "Dime - Back", imagefS: "fdime", imagebS: "bdime"),
+        StarredCard(frontS: "Dollar Coin - Front", backS: "Dollar Coin - Back", imagefS: "fdollarcoin", imagebS: "bdollarcoin")
+    ]
     var currentCard = 0
     var showFront = true
 
@@ -140,6 +143,8 @@ class StarredFlashCardsViewController: UIViewController {
     
     func sLeft()
     {
+        
+        
         self.showFront = true
         
         if (self.currentCard == 0) {
