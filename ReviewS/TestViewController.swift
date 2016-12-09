@@ -48,7 +48,7 @@ class TestViewController: UIViewController {
     
     var correctAnswers = Int()
     
-    var incorrectAnswers = Int()
+    var incorrectAnswers = 0
     
     
     @IBOutlet weak var QLabel: UILabel!
@@ -62,7 +62,7 @@ class TestViewController: UIViewController {
         scoreLbl.text = "-1"
         self.view.addSubview(scoreLbl)
         
-        PickQuestions()
+        pickQuestions()
         
     }
     
@@ -88,16 +88,15 @@ class TestViewController: UIViewController {
                      Question(Question: "Who won the NBA Finals in 2014-2015?", Answers: ["Golden State Warriors", "Clevland Cavaliers", "Chicago Bulls", "Miami Heat" ], Answer: 3),
                      Question(Question: "How many branches of government are there in the US?", Answers: ["2", "1", "3", "4" ], Answer: 2),
                      Question(Question: "What were two common foods eaten by Americans during the Great Depression?", Answers: ["Soup and Bread", "Beans and Bread", "Potatos and Soup", "Bread and Potatos" ], Answer: 1),
-//                     Question(Question: "Where are the Aleutian Islands?", Answers: ["Alaska, USA", "Northwest Territory, Canada", "Siberia, Russia", "Hawaii"], Answer: 1),
-                     Question(Question: "Which of the following NBA players below was drafted first overall?", Answers: ["Micheal Jordan", "Stephen Curry", "Kevin Durant", "Lebron James"], Answer: 3),]
+                     //                     Question(Question: "Where are the Aleutian Islands?", Answers: ["Alaska, USA", "Northwest Territory, Canada", "Siberia, Russia", "Hawaii"], Answer: 1),
+            Question(Question: "Which of the following NBA players below was drafted first overall?", Answers: ["Micheal Jordan", "Stephen Curry", "Kevin Durant", "Lebron James"], Answer: 3),]
         
     }
-    func PickQuestions(){
+    func pickQuestions(){
         
         counter += 1
         score += 1
         scoreLbl.text = "\(score)"
-        
         
         
         restartBtn.isEnabled = false
@@ -121,6 +120,10 @@ class TestViewController: UIViewController {
             
         else{
             //            saveHighScore()
+            //            var icad = 15-incorrectAnswers
+            //            print(icad)
+            //            var cad = icad/15
+            //            percentLabel.text = "\(cad*100)"
             theEnd.text = "You Win!"
             theEnd.alpha = 1
             button1.isEnabled = false
@@ -129,20 +132,9 @@ class TestViewController: UIViewController {
             button4.isEnabled = false
             score = finalScore
             restartBtn.isEnabled = true
-            var icad = incorrectAnswers/15
-            percentLabel.text = "\(15 - icad)"
             
-            func reset(){
-//                let alert = UIAlertController(title: "You Win", message: "Click Restart To Play Again", preferredStyle: UIAlertControllerStyle.alert)
-//                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
-//                alert.addAction(okAction)
-//                present(alert, animated: true, completion: nil)
-//                PickQuestions()
-                
-                
-                
-                
-            }
+            
+            
             reset()
         }
         
@@ -150,25 +142,41 @@ class TestViewController: UIViewController {
         incorrectLabel.alpha = 0
         
     }
+    func reset(){
+        var alert = UIAlertController(title: "You Win", message: "Click Restart To Play Again", preferredStyle: UIAlertControllerStyle.alert)
+        var okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion:nil)
+        counter = 0
+        //        print(incorrectAnswers)
+        pickQuestions()
+        
+        
+        
+        
+        
+        
+    }
+    
+    
     
     @IBAction func Btn1(_ sender: AnyObject) {
         if AnswerNumber == 0{
-            PickQuestions()
-            correctAnswers+=1
+            pickQuestions()
         }
         else{
             incorrectLabel.text = "You are incorrect!"
             incorrectLabel.alpha = 1
             score -= 1
             scoreLbl.text = "\(score)"
-            incorrectAnswers+=1
+            
+            
         }
     }
     @IBAction func Btn2(_ sender: AnyObject) {
         if AnswerNumber == 1{
             
-            PickQuestions()
-            correctAnswers+=1
+            pickQuestions()
             
         }
         else{
@@ -176,15 +184,14 @@ class TestViewController: UIViewController {
             incorrectLabel.alpha = 1
             score -= 1
             scoreLbl.text = "\(score)"
-            incorrectAnswers+=1
+            
         }
         
     }
     @IBAction func Btn3(_ sender: AnyObject) {
         if AnswerNumber == 2{
             
-            PickQuestions()
-            correctAnswers+=1
+            pickQuestions()
             
         }
         else{
@@ -192,7 +199,8 @@ class TestViewController: UIViewController {
             incorrectLabel.alpha = 1
             score -= 1
             scoreLbl.text = "\(score)"
-            incorrectAnswers+=1
+            
+            
             
             
         }
@@ -200,8 +208,7 @@ class TestViewController: UIViewController {
     @IBAction func Btn4(_ sender: AnyObject) {
         if AnswerNumber == 3{
             
-            PickQuestions()
-            correctAnswers+=1
+            pickQuestions()
             
         }
         else{
@@ -209,10 +216,11 @@ class TestViewController: UIViewController {
             incorrectLabel.alpha = 1
             score -= 1
             scoreLbl.text = "\(score)"
-            incorrectAnswers+=1
             
         }
     }
     
 }
+
+
 
