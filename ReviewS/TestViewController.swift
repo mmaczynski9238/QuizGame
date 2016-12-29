@@ -30,7 +30,11 @@ class TestViewController: UIViewController {
     @IBOutlet weak var restartBtn: UIButton!
     var counter = 1
     
+    var timerCounter = 0
+    
     var scoreLbl = UILabel()
+    
+    var timer = Timer()
     
     var score = Int()
     
@@ -49,6 +53,11 @@ class TestViewController: UIViewController {
     var correctAnswers = Int()
     
     var incorrectAnswers = 0
+    
+    var timeScore = 0
+    
+    var newCounter = 0
+
     
     
     @IBOutlet weak var QLabel: UILabel!
@@ -94,13 +103,21 @@ class TestViewController: UIViewController {
     }
     func pickQuestions(){
         
+        newCounter += 1
+        if newCounter == 2{
+            
+        }
+        
+
+        
         counter += 1
-        score += 1
-        scoreLbl.text = "\(score)"
+//        score += 1
+//        scoreLbl.text = "\(score)"
         
         
         restartBtn.isEnabled = false
         if Questions.count > 0 && counter <= 15 {
+            timer = Timer.scheduledTimer(timeInterval: 1.0,target:self, selector: "timedScore" , userInfo: nil, repeats: false)
             QNumber = Int(arc4random_uniform(UInt32(Questions.count)))
             QLabel.text = Questions[QNumber].Question
             
@@ -157,67 +174,53 @@ class TestViewController: UIViewController {
         
         
     }
+    func timedScore(){
+        timerCounter += 1
+    }
     
     
     
     @IBAction func Btn1(_ sender: AnyObject) {
         if AnswerNumber == 0{
             pickQuestions()
+            timer.invalidate()
+            timeScore = timerCounter*100
+            scoreLbl.text = "\(1000-timeScore)"
         }
-        else{
-            incorrectLabel.text = "You are incorrect!"
-            incorrectLabel.alpha = 1
-            score -= 1
-            scoreLbl.text = "\(score)"
-            
-            
-        }
+        
     }
     @IBAction func Btn2(_ sender: AnyObject) {
         if AnswerNumber == 1{
-            
+            timer.invalidate()
+            scoreLbl.text = "\(1000-timeScore)"
+            timeScore = timerCounter*100
+
             pickQuestions()
-            
-        }
-        else{
-            incorrectLabel.text = "You are Incorrect!"
-            incorrectLabel.alpha = 1
-            score -= 1
-            scoreLbl.text = "\(score)"
             
         }
         
     }
     @IBAction func Btn3(_ sender: AnyObject) {
         if AnswerNumber == 2{
-            
+            timer.invalidate()
+
             pickQuestions()
-            
+            scoreLbl.text = "\(1000-timeScore)"
+            timeScore = timerCounter*100
+
         }
-        else{
-            incorrectLabel.text = "You are Incorrect!"
-            incorrectLabel.alpha = 1
-            score -= 1
-            scoreLbl.text = "\(score)"
-            
-            
-            
-            
-        }
+       
     }
     @IBAction func Btn4(_ sender: AnyObject) {
         if AnswerNumber == 3{
-            
+            timer.invalidate()
+
             pickQuestions()
-            
+            scoreLbl.text = "\(1000-timeScore)"
+            timeScore = timerCounter*100
+
         }
-        else{
-            incorrectLabel.text = "You are Incorrect!"
-            incorrectLabel.alpha = 1
-            score -= 1
-            scoreLbl.text = "\(score)"
-            
-        }
+       
     }
     
 }
