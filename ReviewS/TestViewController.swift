@@ -181,17 +181,21 @@ class TestViewController: UIViewController {
     @IBAction func Btn1(_ sender: AnyObject) {
         if AnswerNumber == 0{
             pickQuestions()
-            timer.invalidate()
-            timeScore = timerCounter*100
-            scoreLbl.text = "\(1000-timeScore)"
+//            timer.invalidate()
+//            timeScore = timerCounter*100
+//            scoreLbl.text = "\(1000-timeScore)"
+            score+=1
+            scoreLbl.text = String(score)
         }
         
     }
     @IBAction func Btn2(_ sender: AnyObject) {
         if AnswerNumber == 1{
-            timer.invalidate()
-            scoreLbl.text = "\(1000-timeScore)"
-            timeScore = timerCounter*100
+//            timer.invalidate()
+//            scoreLbl.text = "\(1000-timeScore)"
+//            timeScore = timerCounter*100
+            score+=1
+            scoreLbl.text = String(score)
 
             pickQuestions()
             
@@ -200,22 +204,26 @@ class TestViewController: UIViewController {
     }
     @IBAction func Btn3(_ sender: AnyObject) {
         if AnswerNumber == 2{
-            timer.invalidate()
+//            timer.invalidate()
+            score+=1
+            scoreLbl.text = String(score)
 
             pickQuestions()
-            scoreLbl.text = "\(1000-timeScore)"
-            timeScore = timerCounter*100
+//            scoreLbl.text = "\(1000-timeScore)"
+//            timeScore = timerCounter*100
 
         }
        
     }
     @IBAction func Btn4(_ sender: AnyObject) {
         if AnswerNumber == 3{
-            timer.invalidate()
+//            timer.invalidate()
+            score+=1
+            scoreLbl.text = String(score)
 
             pickQuestions()
-            scoreLbl.text = "\(1000-timeScore)"
-            timeScore = timerCounter*100
+//            scoreLbl.text = "\(1000-timeScore)"
+//            timeScore = timerCounter*100
 
         }
        
