@@ -26,6 +26,7 @@ class TestViewController: UIViewController {
     @IBOutlet weak var incorrectLabel: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var theEnd: UILabel!
+    @IBOutlet weak var startButton: UIButton!
     
     @IBOutlet weak var restartBtn: UIButton!
     var counter = 1
@@ -144,13 +145,13 @@ class TestViewController: UIViewController {
         
     }
     func reset(){
-        var alert = UIAlertController(title: "You Win", message: "Click Restart To Play Again", preferredStyle: UIAlertControllerStyle.alert)
-        var okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
-        alert.addAction(okAction)
-        present(alert, animated: true, completion:nil)
-        counter = 0
+       // var alert = UIAlertController(title: "You Win", message: "Click Restart To Play Again", preferredStyle: UIAlertControllerStyle.alert)
+        //var okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+      //  alert.addAction(okAction)
+  //      present(alert, animated: true, completion:nil)
+   //     counter = 0
         //        print(incorrectAnswers)
-        pickQuestions()
+ //       pickQuestions()
         
         
         
@@ -165,11 +166,18 @@ class TestViewController: UIViewController {
     @IBAction func startButton(_ sender: UIButton) {
         //createTimer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: ("updateTimer"), userInfo: nil, repeats: true)
+        button4.isEnabled = true
+        button3.isEnabled = true
+        button2.isEnabled = true
+        button1.isEnabled = true
         
     }
     func updateTimer(){
         score += 1
         scoreLbl.text = "\(score)"
+        startButton.isEnabled = false
+        
+        
         
     }
     @IBAction func Btn1(_ sender: AnyObject) {
@@ -181,8 +189,9 @@ class TestViewController: UIViewController {
         else{
             incorrectLabel.text = "You are Incorrect!"
             incorrectLabel.alpha = 1
-            score -= 1
+            score += 1
             scoreLbl.text = "\(score)"
+            
             
         }
     
@@ -197,7 +206,7 @@ class TestViewController: UIViewController {
         else{
             incorrectLabel.text = "You are Incorrect!"
             incorrectLabel.alpha = 1
-            score -= 1
+            score += 1
             scoreLbl.text = "\(score)"
             
         }
@@ -211,7 +220,7 @@ class TestViewController: UIViewController {
         else{
             incorrectLabel.text = "You are Incorrect!"
             incorrectLabel.alpha = 1
-            score -= 1
+            score += 1
             scoreLbl.text = "\(score)"
             
         }
@@ -226,7 +235,7 @@ class TestViewController: UIViewController {
         else{
             incorrectLabel.text = "You are Incorrect!"
             incorrectLabel.alpha = 1
-            score -= 1
+            score += 1
             scoreLbl.text = "\(score)"
             
         }

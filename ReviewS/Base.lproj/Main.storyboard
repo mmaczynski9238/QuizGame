@@ -815,6 +815,7 @@
                         <outlet property="continueButton" destination="sTH-ab-nlG" id="smV-ZC-HyM"/>
                         <outlet property="incorrectLabel" destination="sTp-zY-MmC" id="6yi-9B-yd8"/>
                         <outlet property="restartBtn" destination="eap-7Q-91z" id="xhT-gx-4Hs"/>
+                        <outlet property="startButton" destination="4RI-ud-nrl" id="sYN-U6-2XL"/>
                         <outlet property="theEnd" destination="0rr-Rc-5sB" id="9L1-yQ-T54"/>
                         <outletCollection property="Buttons" destination="XBa-TH-eTX" collectionClass="NSMutableArray" id="Zth-9z-2qU"/>
                         <outletCollection property="Buttons" destination="F89-91-2pi" collectionClass="NSMutableArray" id="n8Z-Pv-WN8"/>
