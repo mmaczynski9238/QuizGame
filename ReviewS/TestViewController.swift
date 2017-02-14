@@ -73,6 +73,7 @@ class TestViewController: UIViewController {
         scoreLbl = UILabel(frame: CGRect(x: 35, y: 45, width: 77, height: 45))
         scoreLbl.textAlignment = NSTextAlignment.center
         scoreLbl.text = "0"
+        self.scoreLbl.font = UIFont(name: "HelveticaNeue", size:35)
         self.view.addSubview(scoreLbl)
         
         pickQuestions()
