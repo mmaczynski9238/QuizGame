@@ -64,7 +64,10 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         resetQuestions()
-        
+        button1.isEnabled = false
+        button2.isEnabled = false
+        button3.isEnabled = false
+        button4.isEnabled = false
         
         scoreLbl = UILabel(frame: CGRect(x: 35, y: 45, width: 77, height: 45))
         scoreLbl.textAlignment = NSTextAlignment.center
@@ -101,17 +104,6 @@ class TestViewController: UIViewController {
     }
     func pickQuestions(){
         
-        newCounter += 1
-        if newCounter == 2{
-            
-        }
-        
-
-        
-        counter += 1
-//        score += 1
-//        scoreLbl.text = "\(score)"
-        
         
         restartBtn.isEnabled = false
         if Questions.count > 0 && counter <= 15 {
@@ -133,11 +125,7 @@ class TestViewController: UIViewController {
             
             
         else{
-            //            saveHighScore()
-            //            var icad = 15-incorrectAnswers
-            //            print(icad)
-            //            var cad = icad/15
-            //            percentLabel.text = "\(cad*100)"
+         
             theEnd.text = "You Win!"
             theEnd.alpha = 1
             button1.isEnabled = false
@@ -171,12 +159,15 @@ class TestViewController: UIViewController {
         
         
     }
-    func timedScore(){
-        timerCounter += 1
+   
+    
+    
+    
+    @IBAction func startButton(_ sender: UIButton) {
+        //createTimer
+        
+        
     }
-    
-    
-    
     @IBAction func Btn1(_ sender: AnyObject) {
         if AnswerNumber == 0{
             
