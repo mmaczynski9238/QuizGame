@@ -125,14 +125,13 @@ class TestViewController: UIViewController {
             
             
         else{
-         
+            timer.invalidate()
             theEnd.text = "You Win!"
             theEnd.alpha = 1
             button1.isEnabled = false
             button2.isEnabled = false
             button3.isEnabled = false
             button4.isEnabled = false
-            score = finalScore
             restartBtn.isEnabled = true
             
             
@@ -165,7 +164,12 @@ class TestViewController: UIViewController {
     
     @IBAction func startButton(_ sender: UIButton) {
         //createTimer
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: ("updateTimer"), userInfo: nil, repeats: true)
         
+    }
+    func updateTimer(){
+        score += 1
+        scoreLbl.text = "\(score)"
         
     }
     @IBAction func Btn1(_ sender: AnyObject) {
