@@ -17,6 +17,7 @@ struct Question{
 
 
 class TestViewController: UIViewController {
+    
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
@@ -27,7 +28,6 @@ class TestViewController: UIViewController {
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var theEnd: UILabel!
     @IBOutlet weak var startButton: UIButton!
-    
     @IBOutlet weak var restartBtn: UIButton!
     var counter = 1
     
@@ -96,7 +96,7 @@ class TestViewController: UIViewController {
                      Question(Question: "How many World Series did Yogi Berra win as a player?", Answers: ["11", "10", "5", "7" ], Answer: 1),
                      Question(Question: "Which three countries hosted the Winter Olympics during the 1990's?", Answers: ["Norway, France, Russia", "US, Sweeden, Canada", "Japan, Canada, Germany", "Slovenia, France, South Korea" ], Answer: 0),
                      Question(Question: "Which of these foods is high in Vitamin C?", Answers: ["Carrot", "Potato", "Corn", "Tomato" ], Answer: 3),
-                     Question(Question: "How did John D. Rockefeller make his fortune?", Answers: ["Steel Industry", "Car Industry", "Oil Industry", "RailRoads" ], Answer: 1),
+                     Question(Question: "How did John D. Rockefeller make his fortune?", Answers: ["Steel Industry", "Car Industry", "Oil Industry", "RailRoads" ], Answer: 2),
                      Question(Question: "Who won the NBA Finals in 2014-2015?", Answers: ["Golden State Warriors", "Clevland Cavaliers", "Chicago Bulls", "Miami Heat" ], Answer: 3),
                      Question(Question: "How many branches of government are there in the US?", Answers: ["2", "1", "3", "4" ], Answer: 2),
                      Question(Question: "What were two common foods eaten by Americans during the Great Depression?", Answers: ["Soup and Bread", "Beans and Bread", "Potatos and Soup", "Bread and Potatos" ], Answer: 1),
@@ -115,7 +115,6 @@ class TestViewController: UIViewController {
             AnswerNumber = Questions[QNumber].Answer
             
             for i in 0..<Buttons.count{
-                //                Buttons[i].setTitle(Questions[QNumber].Answers[i], for: UIControlState())
                 button1.setTitle(Questions[QNumber].Answers[0], for: UIControlState())
                 button2.setTitle(Questions[QNumber].Answers[1], for: UIControlState())
                 button3.setTitle(Questions[QNumber].Answers[2], for: UIControlState())
