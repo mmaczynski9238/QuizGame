@@ -60,7 +60,7 @@ class TestViewController: UIViewController {
     
     var publicData = CKContainer.default().publicCloudDatabase
     
-    let newScore = CKRecord(recordType: "Score")
+    var newScore = CKRecord(recordType: "Score")
 
     
     
@@ -141,6 +141,7 @@ class TestViewController: UIViewController {
             
             
             reset()
+            loadData()
         }
         
         
@@ -148,6 +149,17 @@ class TestViewController: UIViewController {
         
     }
     
+    func loadData(){
+        let publicData = CKContainer.default().publicCloudDatabase
+        
+        let query = CKQuery(recordType: "timerScore1", predicate: NSPredicate(format: "TRUEPREDICATE", argumentArray: nil))
+        query.sortDescriptors = [NSSortDescriptor(key: "creationDate",ascending: false)]
+        publicData.perform(query, inZoneWith: nil) { (results:[CKRecord]?, NSError) in
+            if let students = results{
+                    print(students)
+            }
+        }
+    }
     func savedScore(){
         newScore["timerScore1"] = score as CKRecordValue?
         var publicData = CKContainer.default().publicCloudDatabase
