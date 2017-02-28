@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 struct Question{
     var Question : String!
@@ -47,10 +48,6 @@ class TestViewController: UIViewController {
     
     var wrongAnswers = Int()
     
-    var highScore = 0
-    
-    var finalScore = Int()
-    
     var correctAnswers = Int()
     
     var incorrectAnswers = 0
@@ -58,6 +55,12 @@ class TestViewController: UIViewController {
     var timeScore = 0
     
     var newCounter = 0
+    
+    var saveScore = [CKRecord]()
+    
+    var publicData = CKContainer.default().publicCloudDatabase
+    
+    let newScore = CKRecord(recordType: "Score")
 
     
     
@@ -134,7 +137,7 @@ class TestViewController: UIViewController {
             button3.isEnabled = false
             button4.isEnabled = false
             restartBtn.isEnabled = true
-            
+            savedScore()
             
             
             reset()
@@ -143,6 +146,19 @@ class TestViewController: UIViewController {
         
         incorrectLabel.alpha = 0
         
+    }
+    
+    func savedScore(){
+        newScore["timerScore1"] = score as CKRecordValue?
+        var publicData = CKContainer.default().publicCloudDatabase
+        publicData.save(newScore , completionHandler: {(record, error) -> Void in
+            if error == nil{
+                print("Answer Saved")
+            }
+            else{
+                print("Answer Not Saved")
+            }
+        })
     }
     func reset(){
        // var alert = UIAlertController(title: "You Win", message: "Click Restart To Play Again", preferredStyle: UIAlertControllerStyle.alert)
