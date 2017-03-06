@@ -138,8 +138,6 @@ class TestViewController: UIViewController {
             button4.isEnabled = false
             restartBtn.isEnabled = true
             savedScore()
-            
-            
             reset()
             loadData()
         }
@@ -267,10 +265,5 @@ class TestViewController: UIViewController {
             scoreLbl.text = "\(score)"
             
         }
-}
     }
-    
-
-
-
-
+}
