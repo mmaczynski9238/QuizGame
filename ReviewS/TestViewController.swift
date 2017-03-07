@@ -139,7 +139,6 @@ class TestViewController: UIViewController {
             restartBtn.isEnabled = true
             savedScore()
             reset()
-            loadData()
         }
         
         
@@ -164,6 +163,7 @@ class TestViewController: UIViewController {
         publicData.save(newScore , completionHandler: {(record, error) -> Void in
             if error == nil{
                 print("Answer Saved")
+                self.loadData()
             }
             else{
                 print("Answer Not Saved")
