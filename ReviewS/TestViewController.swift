@@ -146,29 +146,32 @@ class TestViewController: UIViewController {
         
     }
     
-    func loadData(){
-        let publicData = CKContainer.default().publicCloudDatabase
+    func loadData()
+    {
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Score", predicate: predicate)
         
-        let query = CKQuery(recordType: "timerScore1", predicate: NSPredicate(format: "TRUEPREDICATE", argumentArray: nil))
-        query.sortDescriptors = [NSSortDescriptor(key: "creationDate",ascending: false)]
-        publicData.perform(query, inZoneWith: nil) { (results:[CKRecord]?, NSError) in
-            if let students = results{
-                    print(students)
-            }
+        publicData.perform(query, inZoneWith: nil) { (records, error) in
+            
+            let variable = records!.last!.object(forKey: "timerScore1")
+            print(variable!)
         }
     }
+    
+
     func savedScore(){
         newScore["timerScore1"] = score as CKRecordValue?
         var publicData = CKContainer.default().publicCloudDatabase
         publicData.save(newScore , completionHandler: {(record, error) -> Void in
             if error == nil{
                 print("Answer Saved")
-                self.loadData()
             }
             else{
                 print("Answer Not Saved")
             }
         })
+        self.loadData()
+
     }
     func reset(){
        // var alert = UIAlertController(title: "You Win", message: "Click Restart To Play Again", preferredStyle: UIAlertControllerStyle.alert)
